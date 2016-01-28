@@ -1,0 +1,19 @@
+﻿<Application
+    x:Class="Sunlight.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sunlight"
+    xmlns:vm="using:Sunlight.ViewModel" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"      
+   >
+    <Application.Resources>
+        <!--Global View Model Locator-->
+        <vm:ViewModelLocator x:Key="Locator" />
+        <local:VisibilityConverter x:Key="VisibilityConverter"/>
+        <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+        <local:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+        <local:StringToImageConverter x:Key="StringToImageConverter"/>
+        <local:IsNullConverter x:Key="IsNullConverter"/>
+        <local:IsNotNullConverter x:Key="IsNotNullConverter"/>
+    </Application.Resources>
+</Application>

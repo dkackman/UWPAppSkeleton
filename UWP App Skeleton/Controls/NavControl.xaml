@@ -1,0 +1,85 @@
+﻿<UserControl
+    x:Class="Sunlight.Controls.NavControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sunlight.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:extensions="using:WinRTXamlToolkit.Controls.Extensions"
+    VerticalAlignment="Stretch"
+    HorizontalAlignment="Stretch"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyleNoHighlighting" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="Transparent">
+                                <ContentPresenter VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <DataTemplate x:Key="ButtonItemTemplate">
+                <Button Command="{Binding Command}" Style="{StaticResource ButtonStyleNoHighlighting}" 
+                        Margin="0" Height="44" BorderThickness="0" Padding="0">
+                    <StackPanel Orientation="Horizontal"
+                        extensions:ListViewItemExtensions.IsSelected="{Binding IsSelected}"
+                        extensions:ListViewItemExtensions.IsEnabled="{Binding IsEnabled}">
+
+                        <TextBlock Width="48" VerticalAlignment="Stretch" TextAlignment="Center" Text="{Binding ButtonText}" FontFamily="Segoe MDL2 Assets"/>
+                        <TextBlock Text="{Binding Text}" />
+                    </StackPanel>
+                </Button>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <SplitView x:Name="NavPanel" DisplayMode="CompactOverlay" CompactPaneLength="48" OpenPaneLength="256"
+               IsPaneOpen="{Binding IsNavOpen, Mode=TwoWay}">
+        <SplitView.Pane>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Content="&#xE700;" FontFamily="Segoe MDL2 Assets" Width="48" Height="44" 
+                                Command="{Binding ToggleNavCommand}" />
+                <ScrollViewer Grid.Row="1" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto">
+                    <StackPanel Orientation="Vertical">
+                        <ListView x:Name="MainItems" ItemsSource="{Binding Path=MainNavItems}"
+                              ItemTemplate="{StaticResource ButtonItemTemplate}" ItemClick="ListView_ItemClick">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                    <Setter Property="Margin" Value="0" />
+                                    <Setter Property="Padding" Value="0" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                        </ListView>
+                    </StackPanel>
+                </ScrollViewer>
+                <StackPanel Grid.Row="2" BorderThickness="0,0.5,0,0" BorderBrush="Gray" VerticalAlignment="Bottom" Orientation="Vertical">
+                    <ListView x:Name="SecondaryItems" ItemsSource="{Binding Path=SecondaryNavItems}" 
+                              ItemTemplate="{StaticResource ButtonItemTemplate}" ItemClick="ListView_ItemClick">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                <Setter Property="Margin" Value="0" />
+                                <Setter Property="Padding" Value="0" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Frame Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+                   x:Name="MainFrame" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+        </SplitView.Content>
+    </SplitView>
+</UserControl>

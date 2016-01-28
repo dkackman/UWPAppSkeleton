@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="Sunlight.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sunlight"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="using:WinRTXamlToolkit.Interactivity"
+    xmlns:controls="using:Sunlight.Controls"
+    mc:Ignorable="d"
+    DataContext="{Binding Settings, Source={StaticResource Locator}}"
+    >
+
+    <Pivot Title="Settings" Margin="12,0,0,0">
+        <PivotItem Header="General">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,24,0,0">
+                    <TextBlock Text="Theme" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                    <TextBlock Text="(requires app restart)" Style="{StaticResource CaptionTextBlockStyle}" 
+                               Margin="12,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+                <ComboBox ItemsSource="{Binding ThemeList}" SelectedItem="{Binding Path=Theme, Mode=TwoWay}"/>
+                
+                <!-- TODO - add your app's general settings controls here -->
+                
+            </StackPanel>
+        </PivotItem>
+        <PivotItem Header="Privacy statement" DataContext="{Binding About, Source={StaticResource Locator}}">
+            <i:Interaction.Behaviors>
+                <local:HideablePivotItemBehavior Visible="{Binding Model.PrivacyStatement, Converter={StaticResource IsNotNullConverter}}" />
+            </i:Interaction.Behaviors>
+            <WebView Source="{Binding Model.PrivacyStatement}"/>
+        </PivotItem>
+        <PivotItem Header="Terms of use" DataContext="{Binding About, Source={StaticResource Locator}}">
+            <i:Interaction.Behaviors>
+                <local:HideablePivotItemBehavior Visible="{Binding Model.TermsOfUse, Converter={StaticResource IsNotNullConverter}}" />
+            </i:Interaction.Behaviors>
+            <WebView Source="{Binding Model.TermsOfUse}"/>
+        </PivotItem>
+        <PivotItem Header="Credits" DataContext="{Binding About, Source={StaticResource Locator}}">
+            <i:Interaction.Behaviors>
+                <local:HideablePivotItemBehavior Visible="{Binding Model.Credits, Converter={StaticResource IsNotNullConverter}}" />
+            </i:Interaction.Behaviors>
+            <ItemsControl ItemsSource="{Binding Model.Credits}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="0,12,0,0" Orientation="Vertical">
+                            <TextBlock Text="{Binding Subject}"/>
+                            <TextBlock Text="{Binding Text}" 
+                                    Visibility="{Binding Text, Converter={StaticResource NullToVisibilityConverter}}"/>
+                            <Image Source="{Binding ImageUri}" HorizontalAlignment="Left" Stretch="None" 
+                                    Visibility="{Binding ImageUri, Converter={StaticResource NullToVisibilityConverter}}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </PivotItem>
+        <PivotItem Header="About">
+            <controls:AboutControl DataContext="{Binding About, Source={StaticResource Locator}}"/>
+        </PivotItem>
+    </Pivot>
+
+</Page>
