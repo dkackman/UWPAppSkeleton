@@ -16,6 +16,8 @@ namespace Sunlight.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
+            // TODO - setup your models, views and viewmodels
+
             // setup app services
             SimpleIoc.Default.Register<INavigationService2>(() =>
             {

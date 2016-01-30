@@ -33,6 +33,7 @@ namespace Sunlight.ViewModel
                     ButtonText = "\uE909",
                     Command = new RelayCommand(() =>
                     {
+                        // TODO - add your website address here
                         var uri = new Uri("http://google.com/", UriKind.Absolute);
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                         Launcher.LaunchUriAsync(uri);
@@ -57,16 +58,30 @@ namespace Sunlight.ViewModel
         }
 
         private bool _isNavOpen;
+        /// <summary>
+        /// Hopefully self explanatory
+        /// </summary>
         public bool IsNavOpen
         {
             get { return _isNavOpen; }
             set { Set<bool>(ref _isNavOpen, value); }
         }
 
+        /// <summary>
+        /// This controls whetehr nav bar is open or closed
+        /// </summary>
         public RelayCommand ToggleNavCommand => new RelayCommand(() => IsNavOpen = !IsNavOpen);
 
+        /// <summary>
+        /// These are the <see cref="NavItem"/>s that appear on the top of the nav bar
+        /// They are the main content pages of an app
+        /// </summary>
         public ObservableCollection<NavItem> MainNavItems { get; private set; }
 
+        /// <summary>
+        /// These appear on the bottom of the navbar
+        /// Mostly settings, login etc.
+        /// </summary>
         public ObservableCollection<NavItem> SecondaryNavItems { get; private set; }
 
         private void NavigationService_Navigated(object sender, EventArgs e)

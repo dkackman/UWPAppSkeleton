@@ -38,6 +38,7 @@ namespace Sunlight.Service
 
         private void _root_Navigated(object sender, NavigationEventArgs e)
         {
+            // any time we naivaget set the system back button appropriately
             if (Root.CanGoBack)
             {
                 SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
@@ -60,6 +61,9 @@ namespace Sunlight.Service
             if (Root.CanGoBack)
             {
                 Root.GoBack();
+
+                // this bit does its best to set the CurrentPageKey to the newly active page
+                // I'm sure we could do better and figure out how to store our key in the back stack but this seems to work
                 var kvp = _pages.FirstOrDefault(pair => pair.Value == Root.CurrentSourcePageType);
                 if (kvp.Key != null)
                 {

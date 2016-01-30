@@ -1,4 +1,6 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using System.Diagnostics;
+
+using Windows.UI.Xaml.Controls;
 
 using GalaSoft.MvvmLight.Ioc;
 
@@ -24,13 +26,9 @@ namespace Sunlight.Controls
             {
                 n.Root = this.MainFrame;
             }
-        }
-
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            foreach (var item in MainItems.Items)
+            else
             {
-                
+                Debug.Assert(false, "You changed something that is violating an assumption about how navigation is wired up");
             }
         }
     }

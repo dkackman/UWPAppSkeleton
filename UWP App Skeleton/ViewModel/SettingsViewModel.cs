@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 
-using GalaSoft.MvvmLight.Views;
-
 using Sunlight.Model;
 using Sunlight.Service;
 
@@ -17,6 +15,9 @@ namespace Sunlight.ViewModel
             _settings = settings;
         }
 
+        /// <summary>
+        /// The app theme name
+        /// </summary>
         public string Theme
         {
             get
@@ -29,6 +30,9 @@ namespace Sunlight.ViewModel
             }
         }
 
+        /// <summary>
+        /// This populates the Theme combo box. Don't change it unless Micsroft adds more theme or add your own subsytem
+        /// </summary>
         public IEnumerable<string> ThemeList => new List<string>() { "Light", "Dark" };
     }
 }

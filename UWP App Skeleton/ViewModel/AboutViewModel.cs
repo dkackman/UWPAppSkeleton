@@ -3,7 +3,6 @@ using System.Windows.Input;
 
 using Windows.System;
 using GalaSoft.MvvmLight.Command;
-using GalaSoft.MvvmLight.Views;
 
 using Sunlight.Model;
 using Sunlight.Service;
@@ -19,13 +18,13 @@ namespace Sunlight.ViewModel
         {
             _about = about;
 
+            // TODO - set this to null if you don't want the little "Rate Our App" widget
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             RateCommand = new RelayCommand(() => Launcher.LaunchUriAsync(new Uri($"ms-windows-store:REVIEW?ProductId={_about.ProductId}")));
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 
-//windows-feedback:ADD?PFN=Microsoft.WindowsFeedback_cw5n1h2txyewy
-            //FeedbackCommand = new RelayCommand(() => Launcher.LaunchUriAsync(
-            //        new Uri($"ms-windows-store:REVIEW?PFN={_about.PackageName}")));
+            // This currently only works for Microsoft's apps so don't uncomment it
+            //FeedbackCommand = new RelayCommand(() => Launcher.LaunchUriAsync(new Uri($"windows-feedback:?contextid=522")));
         }
 
         public IAbout Model => _about;

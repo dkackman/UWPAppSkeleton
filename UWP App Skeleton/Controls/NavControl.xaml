@@ -52,7 +52,7 @@
                 <ScrollViewer Grid.Row="1" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto">
                     <StackPanel Orientation="Vertical">
                         <ListView x:Name="MainItems" ItemsSource="{Binding Path=MainNavItems}"
-                              ItemTemplate="{StaticResource ButtonItemTemplate}" ItemClick="ListView_ItemClick">
+                              ItemTemplate="{StaticResource ButtonItemTemplate}">
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="ListViewItem">
                                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -65,7 +65,7 @@
                 </ScrollViewer>
                 <StackPanel Grid.Row="2" BorderThickness="0,0.5,0,0" BorderBrush="Gray" VerticalAlignment="Bottom" Orientation="Vertical">
                     <ListView x:Name="SecondaryItems" ItemsSource="{Binding Path=SecondaryNavItems}" 
-                              ItemTemplate="{StaticResource ButtonItemTemplate}" ItemClick="ListView_ItemClick">
+                              ItemTemplate="{StaticResource ButtonItemTemplate}">
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
                                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />

@@ -15,6 +15,7 @@ namespace Sunlight.Model
                 //new Link() { Text = "Help", Target = new Uri("https://github.com/dkackman", UriKind.Absolute) }
             };
 
+            // TODO - set this to null to hide the Credits page in settings
             Credits = new List<Credit>()
             {
                 // TODO - add credits
@@ -31,7 +32,7 @@ namespace Sunlight.Model
         public string Publisher => Package.Current.PublisherDisplayName;
 
         // TODO - set this to you privact statement or null to hide
-        public Uri PrivacyStatement => new Uri("https://github.com/dkackman/Sunlight.Net/blob/master/Privacy.md");
+        public Uri PrivacyStatement => new Uri("http://www.bing.com/search?q=privacy+statement+generator&FORM=AWRE");
 
         // TODO set this to non null to show a Terms of Use page 
         public Uri TermsOfUse => null;
