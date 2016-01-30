@@ -1,9 +1,9 @@
 ﻿<Application
-    x:Class="Sunlight.App"
+    x:Class="SKELETON.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Sunlight"
-    xmlns:vm="using:Sunlight.ViewModel" 
+    xmlns:local="using:SKELETON"
+    xmlns:vm="using:SKELETON.ViewModel" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"      
    >
     <Application.Resources>

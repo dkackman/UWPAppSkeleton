@@ -3,7 +3,7 @@ using Windows.UI.Xaml.Controls;
 
 using WinRTXamlToolkit.Interactivity;
 
-namespace Sunlight
+namespace SKELETON
 {
     /// <summary>
     /// Behavior which enables showing/hiding of a pivot item`

@@ -2,7 +2,7 @@
 using Windows.UI.Xaml.Controls;
 using System.Windows.Input;
 
-namespace Sunlight.Controls
+namespace SKELETON.Controls
 {
     public static class ItemClickCommand
     {

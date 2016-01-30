@@ -4,10 +4,10 @@ using System.Windows.Input;
 using Windows.System;
 using GalaSoft.MvvmLight.Command;
 
-using Sunlight.Model;
-using Sunlight.Service;
+using SKELETON.Model;
+using SKELETON.Service;
 
-namespace Sunlight.ViewModel
+namespace SKELETON.ViewModel
 {
     public sealed class AboutViewModel : ViewModel
     {

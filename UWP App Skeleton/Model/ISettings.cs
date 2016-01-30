@@ -1,4 +1,4 @@
-﻿namespace Sunlight.Model
+﻿namespace SKELETON.Model
 {
     /// <summary>
     /// App settings

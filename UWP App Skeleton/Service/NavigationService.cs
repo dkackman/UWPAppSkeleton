@@ -9,7 +9,7 @@ using Windows.UI.Core;
 
 using GalaSoft.MvvmLight.Views;
 
-namespace Sunlight.Service
+namespace SKELETON.Service
 {
     sealed class NavigationService : INavigationService, INavigationService2
     {

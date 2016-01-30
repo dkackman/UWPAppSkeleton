@@ -7,8 +7,8 @@
     <ProjectGuid>{44FEA374-1C83-41FA-838E-6978E7574433}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sunlight</RootNamespace>
-    <AssemblyName>Sunlight</AssemblyName>
+    <RootNamespace>SKELETON</RootNamespace>
+    <AssemblyName>SKELETON</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>

@@ -5,10 +5,10 @@ using GalaSoft.MvvmLight.Views;
 
 using Microsoft.Practices.ServiceLocation;
 
-using Sunlight.Model;
-using Sunlight.Service;
+using SKELETON.Model;
+using SKELETON.Service;
 
-namespace Sunlight.ViewModel
+namespace SKELETON.ViewModel
 {
     public class ViewModelLocator
     {
@@ -21,7 +21,7 @@ namespace Sunlight.ViewModel
             // setup app services
             SimpleIoc.Default.Register<INavigationService2>(() =>
             {
-                var nav = new Sunlight.Service.NavigationService();
+                var nav = new SKELETON.Service.NavigationService();
                 nav.Configure("Home", typeof(HomePage));
                 nav.Configure("Settings", typeof(SettingsPage));
 

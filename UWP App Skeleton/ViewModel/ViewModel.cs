@@ -1,9 +1,9 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Threading;
 
-using Sunlight.Service;
+using SKELETON.Service;
 
-namespace Sunlight.ViewModel
+namespace SKELETON.ViewModel
 {
     /// <summary>
     /// some handy ViewModel stuff

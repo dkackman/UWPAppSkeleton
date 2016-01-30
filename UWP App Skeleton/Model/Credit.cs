@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sunlight.Model
+namespace SKELETON.Model
 {
     /// <summary>
     /// Describes a person or organization to be given credit on the setting page

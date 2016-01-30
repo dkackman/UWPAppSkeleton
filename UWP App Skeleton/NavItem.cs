@@ -2,7 +2,7 @@
 
 using GalaSoft.MvvmLight.Command;
 
-namespace Sunlight
+namespace SKELETON
 {
     /// <summary>
     /// Description of an item that will show up in the NavBar

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Windows.ApplicationModel;
 
-namespace Sunlight.Model
+namespace SKELETON.Model
 {
     sealed class About : IAbout
     {

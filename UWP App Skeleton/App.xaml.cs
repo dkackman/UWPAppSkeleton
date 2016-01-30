@@ -20,9 +20,9 @@ using Windows.Storage;
 using GalaSoft.MvvmLight.Views;
 using GalaSoft.MvvmLight.Ioc;
 
-using Sunlight.Model;
+using SKELETON.Model;
 
-namespace Sunlight
+namespace SKELETON
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -106,7 +106,7 @@ namespace Sunlight
             Window.Current.Activate();
 
             // TODO - refator this 
-            //var nav = SimpleIoc.Default.GetInstance<INavigationService>() as Sunlight.Service.NavigationService;
+            //var nav = SimpleIoc.Default.GetInstance<INavigationService>() as SKELETON.Service.NavigationService;
             //var mainPage = rootFrame.Content as MainPage;
             //nav.Root = mainPage.NavigationRoot;
 

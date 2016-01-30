@@ -6,9 +6,9 @@ using Windows.System;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Threading;
 
-using Sunlight.Service;
+using SKELETON.Service;
 
-namespace Sunlight.ViewModel
+namespace SKELETON.ViewModel
 {
     public class MainViewModel : ViewModel
     {

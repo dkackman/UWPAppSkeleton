@@ -4,7 +4,7 @@ using Windows.UI.Xaml.Controls;
 
 using GalaSoft.MvvmLight.Views;
 
-namespace Sunlight.Service
+namespace SKELETON.Service
 {
     /// <summary>
     /// Some additoinal stuff to help with navigation

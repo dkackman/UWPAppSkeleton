@@ -4,11 +4,11 @@ using Windows.UI.Xaml.Controls;
 
 using GalaSoft.MvvmLight.Ioc;
 
-using Sunlight.Service;
+using SKELETON.Service;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace Sunlight.Controls
+namespace SKELETON.Controls
 {
     public sealed partial class NavControl : UserControl
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Sunlight.Model
+namespace SKELETON.Model
 {
     /// <summary>
     /// Interface the describes basic meta-data about an app

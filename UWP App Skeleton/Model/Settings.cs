@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 using Windows.Storage;
 
-namespace Sunlight.Model
+namespace SKELETON.Model
 {
     sealed class Settings : ISettings
     {

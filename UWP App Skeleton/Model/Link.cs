@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sunlight.Model
+namespace SKELETON.Model
 {
     /// <summary>
     /// Used to describe hyper links that will be created on the about page

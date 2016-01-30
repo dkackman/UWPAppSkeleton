@@ -4,7 +4,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace Sunlight
+namespace SKELETON
 {
     sealed class StringToImageConverter : IValueConverter
     {

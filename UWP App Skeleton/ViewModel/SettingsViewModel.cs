@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
-using Sunlight.Model;
-using Sunlight.Service;
+using SKELETON.Model;
+using SKELETON.Service;
 
-namespace Sunlight.ViewModel
+namespace SKELETON.ViewModel
 {
     public sealed class SettingsViewModel : ViewModel
     {
